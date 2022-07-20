@@ -51,17 +51,3 @@
             content: |
                 def extra_fn():
                   pass
-
--   case: add_mypypath_env_var_to_package_search
-    main: |
-        import extra_module
-    mypy_config: |
-        [mypy.plugins.django-stubs]
-        django_settings_module = mysettings
-    env:
-      - MYPYPATH=./extras
-    files:
-        -   path: extras/extra_module.py
-            content: |
-                def extra_fn():
-                  pass
